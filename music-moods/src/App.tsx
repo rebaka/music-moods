@@ -1,23 +1,66 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import Mood from './components/Moods.tsx'
+// import Mood from './components/Moods.tsx'
+import MoodInputTextBox from "./Components/Moods";
+
 
 function App() {
+
+    const[inputValue, setInputValue] = useState('');
+
+    const handleInputChange = (value: string) => {
+        setInputValue(value);
+        console.log('Typed value:', value);
+    };
+
+    const handleSave = () => {
+        console.log('Input value:', inputValue);
+    };
+
   return (
+    //   <>
+    //   <div className="App-title">
+    //     <h1> WELCOME TO MUSIC MOODS </h1>
+    //     {/* <Mood/> */}
+    //   </div>
+    //
+    // <p className='Instructions'>
+    //     Inputting something in the text box and pressing enter generates a custom playlist for the user depending on their mood. {"\n"}
+    //     Afterwards the user can modify their playlist to curate the music they want.
+    // </p>
+    //
+    //   </>
+
+
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <h1>
+              WELCOME TO MUSIC MOODS
+          </h1>
+          {/*<input className="Mood-Input"*/}
+          {/*    type="text" id="mood" placeholder="Input mood here :)"*/}
+          {/*/>*/}
+
+
+          <MoodInputTextBox value={inputValue} onChange={handleInputChange} onSave={handleSave}/>
+
+          {/*<button>Generate Playlist</button>*/}
+
+          {/*<button onClick="generatePlaylist()">Generate Playlist</button>*/}
+
+        {/*<p>*/}
+        {/*  Edit <code>src/App.tsx</code> and save to reload.*/}
+        {/*</p>*/}
+        {/*<a*/}
+        {/*  className="App-link"*/}
+        {/*  href="https://reactjs.org"*/}
+        {/*  target="_blank"*/}
+        {/*  rel="noopener noreferrer"*/}
+        {/*>*/}
+        {/*  Learn React*/}
+        {/*</a>*/}
       </header>
     </div>
   );

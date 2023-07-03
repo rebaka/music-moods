@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import Mood from './components/Moods.tsx'
-// import Mood from './components/Moods.tsx'
 import MoodInputTextBox from "./Components/Moods";
 
 
@@ -36,15 +34,13 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-          <h1>
+          <h1 className="App-Title">
               WELCOME TO MUSIC MOODS
           </h1>
           {/*<input className="Mood-Input"*/}
           {/*    type="text" id="mood" placeholder="Input mood here :)"*/}
           {/*/>*/}
 
-
-          <MoodInputTextBox value={inputValue} onChange={handleInputChange} onSave={handleSave}/>
 
           {/*<button>Generate Playlist</button>*/}
 
@@ -62,6 +58,17 @@ function App() {
         {/*  Learn React*/}
         {/*</a>*/}
       </header>
+
+        <div className="Instructions">
+            <p className='Instructions-text'>
+                Inputting something in the text box and pressing enter generates a custom playlist for the user depending on their mood. {"\n"}
+                Afterwards the user can modify their playlist to curate the music they want.
+            </p>
+        </div>
+
+        <div className="Input">
+            <MoodInputTextBox value={inputValue} onChange={handleInputChange} onSave={handleSave}/>
+        </div>
     </div>
   );
 }

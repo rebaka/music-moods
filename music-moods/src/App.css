@@ -1,48 +1,99 @@
 .App {
+  min-height: 100vh;
   text-align: center;
   height: fit-content;
   background-image: linear-gradient(40deg, #845ec2, #d65db1, #f9f871);
+  background-size: cover;
 }
 
-input[type="text"] {
-  width: 450px;
+/*input[type="text"] {*/
+/*  width: 450px;*/
 
-  padding: 10px;
-  font-size: 28px;
-  text-align: center;
+/*  padding: 10px;*/
+/*  font-size: 28px;*/
+/*  text-align: center;*/
 
-  border: 1px none #4b4b4b;
-  border-radius:35px;
-}
+/*  border: 1px none #4b4b4b;*/
+/*  border-radius:35px;*/
+/*}*/
 
-input[type="text"]:focus {
+/*input[type="text"]:focus {*/
 
-  width: 450px;
+/*  width: 450px;*/
 
-  padding: 10px;
-  font-size: 28px;
-  text-align: center;
-  outline: none;
-}
+/*  padding: 10px;*/
+/*  font-size: 28px;*/
+/*  text-align: center;*/
+/*  outline: none;*/
+/*}*/
 
-button {
-  padding: 10px 23px;
-  margin: 15px;
-  font-size: 22px;
-  background-color: #000000;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+.header-container {
+  display: flex;
+  justify-content: center;
 }
 
 .App-header {
-  height: max-content;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
+
+.App-Title {
+
+  display: block;
+  /*margin: 70px;*/
+  text-align: center;
+
+  /*font-size: calc(40px + 2vmin);*/
+  font-size: 4.75vw;
+  color: white;
+  opacity: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+
+  z-index: 2;
+
+  margin-top: 65px;
+  margin-bottom: 400px;
+}
+
+.Instructions-text {
+  width: auto;
+  display: flex;
+  align-items: center;
+
+  padding: 40px;
+  margin: 120px;
+
+  font-size: 1.25vw;
+  /*color: black;*/
+
+  background-color: #000;
+  opacity: .9;
+
+  color: white;
+
+  border-radius: 100px;
+
+  z-index: 1;
+}
+
+.Input {
+  margin-top: -65px;
+}
+
+/*button {*/
+/*  padding: 10px 23px;*/
+/*  margin: 15px;*/
+/*  font-size: 22px;*/
+/*  background-color: #000000;*/
+/*  color: white;*/
+/*  border: none;*/
+/*  border-radius: 20px;*/
+/*  cursor: pointer;*/
+/*}*/
+

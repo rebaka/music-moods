@@ -1,7 +1,7 @@
 .Mood-Input{
-    width: 450px;
+    width: 475px;
 
-    padding: 10px;
+    padding: 15px;
     font-size: 28px;
     text-align: center;
 
@@ -10,14 +10,25 @@
 }
 
 .Mood-Input:focus {
+    width: 475px;
 
-    width: 450px;
-
-    padding: 10px;
+    padding: 15px;
     font-size: 28px;
     text-align: center;
     outline: none;
 }
+
+button {
+    padding: 13px 25px;
+    margin: 15px;
+    font-size: 22px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
 
 /*.mood button {*/
 

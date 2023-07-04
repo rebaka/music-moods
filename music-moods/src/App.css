@@ -63,10 +63,12 @@
 
 .Instructions-text {
   width: auto;
-  display: flex;
   align-items: center;
+  white-space: pre-line;
+  text-align: center;
+  display: inline-block;
 
-  padding: 40px;
+  padding: 40px 150px;
   margin: 120px;
 
   font-size: 1.25vw;

@@ -61,8 +61,9 @@ function App() {
 
         <div className="Instructions">
             <p className='Instructions-text'>
-                Inputting something in the text box and pressing enter generates a custom playlist for the user depending on their mood. {"\n"}
-                Afterwards the user can modify their playlist to curate the music they want.
+                Please input your mood into the box below. Then a playlist will be generated based off of your mood.
+                {'\n'}
+                Afterwards you can modify the playlist to listen to the music you want to listen to.
             </p>
         </div>
 

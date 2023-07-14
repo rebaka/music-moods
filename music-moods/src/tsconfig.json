@@ -21,11 +21,6 @@
     "jsx": "react-jsx"
   },
 
-    "spotify": {
-        "CLIENT_ID": "5ebdd97d7006499b9c536c3490b08016",
-        "CLIENT_SECRET": "5a1ead6a6d6147ee8d06c84dc494622a"
-    },
-
   "exclude": [
     "node_modules"
   ]

@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import tsconfig from './tsconfig.json';
 
 import './App.css';
 import MoodInputTextBox from "./Components/Moods";
-import { redirectToAuthCodeFlow, getAccessToken } from "./Authorization";
-import {dark} from "@mui/material/styles/createPalette";
+import {getAccessToken, redirectToAuthCodeFlow} from "./Authorization";
 
 function App() {
     const CLIENT_ID = tsconfig.spotify.CLIENT_ID;
@@ -12,6 +11,7 @@ function App() {
 
     const [inputValue, setMoodValue] = useState('');
     const [accessToken, setAccessToken] = useState('')
+    const [playlistID, setPlaylistID] = useState('')
 
     const SPOTIFY_AUTH = "https://accounts.spotify.com/authorize"
 
@@ -40,11 +40,9 @@ function App() {
                     // Store the access token in your preferred storage mechanism or state management
                 } catch (error) {
                     console.error('Error getting access token:', error);
-                    // Handle the error and display an appropriate message to the user
                 }
             } else {
                 console.error('Authorization code missing');
-                // Handle the case when the authorization code is missing or invalid
             }
         };
 
@@ -74,15 +72,13 @@ function App() {
                 await createPlaylist(id);
             } else {
                 console.error('Error retrieving user data:', response.status);
-                // Handle the error and display an appropriate message to the user
             }
         } catch (error) {
             console.error('Error retrieving user data:', error);
-            // Handle the error and display an appropriate message to the user
         }
     }
 
-    //Create Playlist
+    //Create Playlist (returns playlist ID)
     async function createPlaylist(id: string) {
         // console.log("AAA", id);
 
@@ -102,20 +98,24 @@ function App() {
 
             if (createPlaylistResponse.ok) {
                 console.log('Playlist created');
+                const playlist = await createPlaylistResponse.json();
+                setPlaylistID(playlist.id);
+                getPlaylistID(playlistID);
 
             } else {
-                console.error('Error creating playlist:', createPlaylistResponse.status);
-                // Handle the error and display an appropriate message to the user
+                console.error('Failed to create playlist:', createPlaylistResponse.status);
             }
         } catch (error) {
             console.error('Error creating playlist:', error);
-            // Handle the error and display an appropriate message to the user
         }
 
 
     }
 
     //Get Playlist ID
+    async function getPlaylistID(playlistID: string) {
+        console.log("PLaylist ID: " + playlistID);
+    }
 
     //Edit Playlist
 
